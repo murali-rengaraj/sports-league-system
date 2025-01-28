@@ -37,7 +37,6 @@ return new class extends Migration
             $table->string('status'); //('scheduled', 'ongoing', 'completed')
             $table->timestamps();
         });
-
         Schema::create('scores', function (Blueprint $table) {
             $table->id();
             $table->integer('match_id');
