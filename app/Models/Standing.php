@@ -9,6 +9,8 @@ class Standing extends Model
 {
     use HasFactory;
 
+    protected $fillable= ['matches_played','wins','draws','losses'];
+
     public function team(){
         return $this->belongsTo(Team::class);
     }

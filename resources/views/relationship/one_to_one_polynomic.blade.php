@@ -2,27 +2,36 @@
 
 @section('content')
 <div class="container w-50 mt-2">
-<caption>
-    <h3 class="text-center">ONE TO ONE POLYMORPHIC RELATIONSHIP</h3>
-    <p class="text-center text-success">The child model Medias belongs to a single instance of Teams, Players and Matches model</p>
-</caption>
-<table class="table table-hover">
-    <tr class="table-danger">
-        <th>S/No</th>
-        <th>File URL</th>
-        <th>Type</th>
-        <th>Table</th>
-    </tr>
-
+    <caption>
+        <h3 class="text-center">ONE TO ONE POLYMORPHIC RELATIONSHIP</h3>
+        <p class="text-center text-success">The child model Medias belongs to a single instance of Teams, Players and Matches model</p>
+    </caption>
+    <table class="table table-hover">
+        <tr class="table-danger">
+            <th>S/No</th>
+            <th>Team Name</th>
+            <th>File URL</th>
+            <th>Type</th>
+            <th>Table</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>{{ $media->name }}</td>
+            <td>{{ $media->medias->file_url }}</td>
+            <td>{{ $media->medias->media_type }}</td>
+            <td>{{ $media->medias->mediable_type }}</td>
+        </tr>
+        {{--
     @foreach ($medias as $media)
         <tr>
             <td>{{ $loop->iteration }}</td>
-            <td>{{ $media->file_url }}</td>
-            <td>{{ $media->media_type }}</td>
-            <td>{{ $media->mediable_type }}</td>
+        <td>{{ $media->file_url }}</td>
+        <td>{{ $media->media_type }}</td>
+        <td>{{ $media->mediable_type }}</td>
         </tr>
-    @endforeach
+        @endforeach
+        --}}
 
-</table>
+    </table>
 </div>
 @endsection

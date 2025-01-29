@@ -27,9 +27,9 @@
             @foreach ($row->player as $player)
                 <tr>
                     <td>{{ $loop->iteration}}</td>
-                    <td>{{ $player->name }}</td>
-                    <td>{{ $player->date_of_birth }}</td>
-                    <td>{{ $player->nationality }}</td>
+                    <td>{{ $player->name ?? '' }}</td>
+                    <td>{{ $player->date_of_birth ?? '' }}</td>
+                    <td>{{ $player->nationality ?? '' }}</td>
                 </tr>
             @endforeach
         <tr>

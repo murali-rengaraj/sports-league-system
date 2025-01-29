@@ -4,7 +4,7 @@
 <div class="container w-50 mt-2">
     <caption>
         <h3 class="text-center">MANY TO MANY RELATIONSHIP</h3>
-        <p class="text-center text-success">Players table has many to many relationship with Matches table</p>
+        <p class="text-center text-success">Players table has many to many relationship with Awards table</p>
     </caption>
     <table class="table table-hover">
         <tr class="table-danger">

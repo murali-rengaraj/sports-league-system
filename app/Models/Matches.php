@@ -13,4 +13,7 @@ class Matches extends Model
         return $this->morphOne(Media::class,'mediable');
     }
     
+    public function mediasMany(){
+        return $this->morphMany(Media::class,'mediable');
+    }
 }

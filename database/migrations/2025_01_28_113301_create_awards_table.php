@@ -22,7 +22,12 @@ return new class extends Migration
             $table->unsignedBigInteger('award_id');
             $table->unsignedBigInteger('player_id');
             $table->timestamps();
+
+            $table->foreignId('award_id')->references('id')->on('awards')->onDelete('cascade');
+            $table->foreignId('player_id')->references('id')->on('players')->onDelete('cascade');
         });
+
+
     }
 
     /**

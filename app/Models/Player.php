@@ -30,4 +30,8 @@ class Player extends Model
     public function medias(){
         return $this->morphOne(Media::class,'mediable');
     }
+    
+    public function mediasMany(){
+        return $this->morphMany(Media::class,'mediable');
+    }
 }

@@ -20,12 +20,12 @@
     @foreach ($rows as $row)
         <tr>
             <td>{{ $loop->iteration }}</td>
-            <td>{{ $row->name }}</td>
-            <td>{{ $row->city }}</td>
-            <td>{{ $row->standing->matches_played }}</td>
-            <td>{{ $row->standing->wins}}</td>
-            <td>{{ $row->standing->draws}}</td>
-            <td>{{ $row->standing->losses}}</td>
+            <td>{{ $row->name ?? ''}}</td>
+            <td>{{ $row->city ?? ''}}</td>
+            <td>{{ $row->standing->matches_played ?? ''}}</td>
+            <td>{{ $row->standing->wins ?? ''}}</td>
+            <td>{{ $row->standing->draws ?? ''}}</td>
+            <td>{{ $row->standing->losses ?? ''}}</td>
         </tr>
     @endforeach
 

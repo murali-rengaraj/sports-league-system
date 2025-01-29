@@ -9,6 +9,8 @@ class Team extends Model
 {
     use HasFactory;
 
+    protected $fillable= ["name",'city','logo_url','founded_year'];
+
     public function standing(){
         return $this->hasOne(Standing::class);
     }
@@ -19,5 +21,9 @@ class Team extends Model
 
     public function medias(){
         return $this->morphOne(Media::class,'mediable');
+    }
+
+    public function mediasMany(){
+        return $this->morphMany(Media::class,'mediable');
     }
 }
