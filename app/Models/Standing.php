@@ -11,6 +11,7 @@ class Standing extends Model
 
     protected $fillable= ['matches_played','wins','draws','losses'];
 
+    // inverse one to one relationship with team 
     public function team(){
         return $this->belongsTo(Team::class);
     }

@@ -34,12 +34,17 @@ class UpdateMatchesTable extends Migration
     public function down()
     {
         Schema::table('matches', function (Blueprint $table) {
-            $table->dateTime('match_date')->nullable();
-            $table->string('location')->nullable();
-            $table->string('status')->nullable();
-
-            $table->dropColumn('matchinformation_id');
+            $table->integer('team_id')->default(0);
+            $table->foreign(['home_team_id', 'away_team_id']);
+            $table->dropColumn(['home_team_id', 'away_team_id']);
         });
-        Schema::dropIfExists('matchinformation');
+        // Schema::table('matches', function (Blueprint $table) {
+        //     $table->dateTime('match_date')->nullable();
+        //     $table->string('location')->nullable();
+        //     $table->string('status')->nullable();
+
+        //     $table->dropColumn('matchinformation_id');
+        // });
+        // Schema::dropIfExists('matchinformation');
     }
 }

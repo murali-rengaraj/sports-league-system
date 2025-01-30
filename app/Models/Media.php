@@ -11,6 +11,7 @@ class Media extends Model
 
     protected $table='medias';
 
+    // Inverce One To One/Many Polymorphic relationship 
     public function mediable(){
         return $this->morphTo();
     }

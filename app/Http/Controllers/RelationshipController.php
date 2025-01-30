@@ -14,7 +14,7 @@ class RelationshipController extends Controller
 {
     public function OneToOne()
     {
-        #add new data
+        #add new data (just learning purpose)
         // $team= Team::find(11);
         // $team->standing()->create([
         //     'matches_played'=>1,

@@ -61,6 +61,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('player');
+        Schema::dropIfExists('teams');
+        Schema::dropIfExists('players');
+        Schema::dropIfExists('matches');
+        Schema::dropIfExists('scores');
+        Schema::dropIfExists('standings');
     }
 };
