@@ -6,10 +6,19 @@
 
 @section('content')
 <div class="container-fluid">
+    @if(Session::has('success'))
+    <div class="container w-50 mt-3">
+        <div class="alert-sm alert-success text-center" style="display: block;" id="hideAlert">
+            {{Session::get('success')}}
+        </div>
+    </div>
+    @endif
     <h1>Welcome to Co Sports</h1>
     <a href="{{ url('/players') }}" style="display: block;">Show All Players</a>
     <a href="{{ url('/teams') }}" style="display: block;">Show All Teams</a>
     <a href="{{ url('/standings') }}" style="display: block;">Show All Standings</a>
+    
+    <a href="{{ url('/player-award') }}" style="display: block;">Give Award to Player</a>
 
     <h4 class="alert-success mt-5">Relationships</h4>
     <a href="{{ url('/oneToOne') }}" style="display: block;">One to One Relationship</a>
@@ -25,3 +34,12 @@
     <a href="{{ route('form_without_csrf') }}" style="display: block;">Form Submit Without CSRF Token</a>
 </div>
 @endsection
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hideAlert = document.getElementById('hideAlert');
+        setTimeout(function() {
+            hideAlert.style.display = 'none';
+        }, 3000)
+    });
+</script>

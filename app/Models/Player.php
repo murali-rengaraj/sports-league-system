@@ -9,6 +9,8 @@ class Player extends Model
 {
     use HasFactory;
 
+    protected $fillable= ["team_id","name","date_of_birth","nationality"];
+
     // inverse one to many relationship with team 
     public function team(){
         return $this->belongsTo(Team::class);

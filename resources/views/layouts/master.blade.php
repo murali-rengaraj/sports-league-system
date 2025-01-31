@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,11 @@
     Sports League System: if you're into sports, you can build a system to manage the teams, players, matches, scores, and standings. You may also build a public website with it. 
     -->
 </head>
+
 <body>
+    @include('layouts.header')
+
     @yield('content')
 </body>
+
 </html>

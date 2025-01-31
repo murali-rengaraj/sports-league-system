@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Middleware\CheckDays;
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+// use Illuminate\Support\Facades\Schedule;
+
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -21,6 +24,14 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->validateCsrfTokens([
             '/form_without_csrf'
         ]);
+    })
+    ->withSchedule(function (Schedule $schedule) {
+        $schedule->call(function(){
+            echo "Hello world! <br>";
+        })->everySecond();
+    })
+    ->withSchedule(function (Schedule $schedule) {
+        $schedule->command('hello:world')->everyTenSeconds();
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
