@@ -31,7 +31,8 @@ Route::middleware(['auth'])->group(function () {
 
     
     Route::get('/player-award', [ShowController::class, 'createPlayerAward']);
-    Route::post('/player-award', [ShowController::class, 'storePlayerAward'])->name('awardPlayer');
+    Route::post('/player-award', [ShowController::class, 'createPlayersOfTeam']);
+    Route::post('/awardPlayer', [ShowController::class, 'storePlayerAward'])->name('awardPlayer');
 });
 
 

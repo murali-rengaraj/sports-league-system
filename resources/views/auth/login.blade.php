@@ -1,6 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
+<div class="mt-1 ms-3">
+    <a href="{{ url('/') }}">
+        <button class="btn btn-warning">
+            Home
+        </button>
+    </a>
+</div>
 <div class="container w-25 mt-5">
     <h2 class="text-center text-info">Login</h2>
     @if (Session::has('invalid'))
