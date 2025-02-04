@@ -24,8 +24,8 @@
         <select name="award_id" id="selectAward" class="form-control">
             <option value="">Select Award</option>
             @foreach ( $awards as $award )
-            <option value="{{ $award->id }}" 
-            @if (old('award_id') == $award->id) selected @endif > 
+            <option value="{{ $award->id }}"
+            @if (old('award_id') == $award->id) selected @endif >
             {{ $award->name }}</option>
             @endforeach
         </select>

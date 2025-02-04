@@ -29,7 +29,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/teams', [ShowController::class, 'showTeams']);
     Route::get('/standings', [ShowController::class, 'showStandings']);
 
-    
+
     Route::get('/player-award', [ShowController::class, 'createPlayerAward']);
     Route::post('/player-award', [ShowController::class, 'createPlayersOfTeam']);
     Route::post('/awardPlayer', [ShowController::class, 'storePlayerAward'])->name('awardPlayer');
