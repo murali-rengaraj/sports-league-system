@@ -29,6 +29,12 @@
 
         <br>
         <input type="submit" value="Login" class="form-control btn btn-success">
+        <p class="text-center my-1">
+            <small>OR</small>
+        </p>
+        <a href="{{ route('authGoogle') }}" class="mt-0">
+            <button class="btn form-control btn-outline-success rounded-pill mt-0" type="button">Login With Google</button>
+        </a>
         <p>Register <a href="{{ url('/register') }}">here</a></p>
     </form>
 </div>

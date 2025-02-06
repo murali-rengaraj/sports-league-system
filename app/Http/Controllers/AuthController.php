@@ -27,7 +27,7 @@ class AuthController extends Controller
             'email'=>'required|email|unique:users,email',
             'password'=> 'required|min:8|confirmed'
         ]);
-        
+
         $user= new User();
         $user->name= $request->name;
         $user->email= $request->email;
@@ -49,6 +49,9 @@ class AuthController extends Controller
             'password'=> $request->password
         ];
         if (Auth::attempt($info)){
+            $user = User::where('email', $request->email)->first();
+            Auth::login($user);
+            $user->assignRole($user->role);
             return redirect('/')->with('success','Login Successfully!');
         }else{
             return back()->with('invalid','Email or Password is invalid!');
@@ -60,5 +63,5 @@ class AuthController extends Controller
         Auth::logout();
         return redirect('/')->with('success','Logout Successfully!');
     }
-    
+
 }

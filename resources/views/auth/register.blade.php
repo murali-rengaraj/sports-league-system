@@ -37,6 +37,12 @@
         <input type="hidden" value="user" name="user">
         <br>
         <input type="submit" value="Submit" class="form-control btn btn-success">
+        <p class="text-center my-1">
+            <small>OR</small>
+        </p>
+        <a href="{{ route('authGoogle') }}" class="mt-0">
+            <button class="btn form-control btn-outline-success rounded-pill mt-0" type="button">Continue With Google</button>
+        </a>
         <p>Login <a href="{{ url('login') }}">here</a></p>
     </form>
 </div>

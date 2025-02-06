@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GoogleSocialiteController;
 use App\Http\Controllers\RelationshipController;
 use App\Http\Controllers\ShowController;
 use App\Http\Middleware\CheckDays;
@@ -20,6 +21,26 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/login', 'checkLogin')->name('login');
     Route::post('/logout', 'logout');
 })->middleware('guest');
+
+//Socialite Google Auth
+Route::controller(GoogleSocialiteController::class)->group(function(){
+    Route::get('auth/google','redirectToGoogle')->name('authGoogle');
+    Route::get('callback/google','handleCalback');
+});
+
+//Spatie Admin Role
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get("/mypermissions", function(){
+        return "You can Create, Edit and Delete";
+    });
+});
+//Spatie User Role
+Route::middleware(['auth', 'role:user'])->group(function () {
+    Route::get("/mypermissions", function(){
+        return "You can only View";
+    });
+});
+
 
 Route::middleware(['auth'])->group(function () {
     //Show all Players
