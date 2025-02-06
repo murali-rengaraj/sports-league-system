@@ -21,6 +21,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // ]);
         $middleware->alias([
             'checkdays' => CheckDays::class,
+            'check.booking.success' => \App\Http\Middleware\CheckBookingSuccess::class,
             'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
             'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
             'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,

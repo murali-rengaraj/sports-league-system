@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EventBookingController;
 use App\Http\Controllers\GoogleSocialiteController;
 use App\Http\Controllers\RelationshipController;
 use App\Http\Controllers\ShowController;
@@ -27,6 +28,15 @@ Route::controller(GoogleSocialiteController::class)->group(function(){
     Route::get('auth/google','redirectToGoogle')->name('authGoogle');
     Route::get('callback/google','handleCalback');
 });
+
+// Main task : Event Page
+Route::controller(EventBookingController::class)->group(function () {
+    Route::get('/events', 'index')->name('event.index')->middleware('auth');
+    Route::get('/event-booking', 'showForm')->name('event.booking.form');
+    Route::post('/event-booking/process','processBooking')->name('event.booking.process');
+    Route::get('/booking-success', 'success')->name('event.booking.success')->middleware('check.booking.success');
+});
+
 
 //Spatie Admin Role
 Route::middleware(['auth', 'role:admin'])->group(function () {

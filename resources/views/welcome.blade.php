@@ -12,6 +12,12 @@
             {{Session::get('success')}}
         </div>
     </div>
+    @elseif (Session::has('error'))
+    <div class="container w-50 mt-3">
+        <div class="alert-sm alert-danger text-center" style="display: block;" id="hideAlert">
+            {{Session::get('error')}}
+        </div>
+    </div>
     @endif
     <h1>Welcome to Co Sports</h1>
     <a href="{{ url('/players') }}" style="display: block;">Show All Players</a>
@@ -21,6 +27,10 @@
     <a href="{{ url('/player-award') }}" style="display: block;">Give Award to Player</a>
 
     <a href="{{ url('/mypermissions') }}" style="display: block;">Check Permission</a>
+
+    <h4 class="alert-warning mt-5">Main Task: Event Page</h4>
+    <a href="{{ route('event.index') }}" style="display: block;">Show All Events</a>
+    <a href="{{ route('event.booking.form') }}" style="display: block;">Book Events</a>
 
 
     <h4 class="alert-success mt-5">Relationships</h4>
