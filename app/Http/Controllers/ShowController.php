@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 
 class ShowController extends Controller
 {
-    // Show All Players 
+    // Show All Players
     public function showPlayers()
     {
         // $rows = Player::all();
@@ -68,5 +68,13 @@ class ShowController extends Controller
         $award->save();
 
         return back()->with('success','Award Inserted Successfully!');
+    }
+
+    public function showSoftDelete(){
+
+        $playersWithoutTrash= Player::all();
+        $playersOnlyTrash= Player::onlyTrashed()->get();
+        // dd($playersOnlyTrash);
+        return view('tasks.showSoftDelete',compact('playersWithoutTrash', 'playersOnlyTrash'));
     }
 }

@@ -17,18 +17,14 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('award_player',function(Blueprint $table){
+        Schema::create('award_player', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('award_id');
-            $table->unsignedBigInteger('player_id');
+            $table->foreignId('award_id')->constrained('awards')->onDelete('cascade');
+            $table->foreignId('player_id')->constrained('players')->onDelete('cascade');
             $table->timestamps();
-
-            $table->foreignId('award_id')->references('id')->on('awards')->onDelete('cascade');
-            $table->foreignId('player_id')->references('id')->on('players')->onDelete('cascade');
         });
-
-
     }
+
 
     /**
      * Reverse the migrations.

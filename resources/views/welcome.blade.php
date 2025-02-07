@@ -21,12 +21,12 @@
     @endif
     <h1>Welcome to Co Sports</h1>
     <a href="{{ url('/players') }}" style="display: block;">Show All Players</a>
-    <a href="{{ url('/teams') }}" style="display: block;">Show All Teams</a>
-    <a href="{{ url('/standings') }}" style="display: block;">Show All Standings</a>
+    {{-- <a href="{{ url('/teams') }}" style="display: block;">Show All Teams</a>
+    <a href="{{ url('/standings') }}" style="display: block;">Show All Standings</a> --}}
 
     <a href="{{ url('/player-award') }}" style="display: block;">Give Award to Player</a>
 
-    <a href="{{ url('/mypermissions') }}" style="display: block;">Check Permission</a>
+    <a href="{{ url('/mypermissions') }}" style="display: block;">Check Permission using Spatie</a>
 
     <h4 class="alert-warning mt-5">Main Task: Event Page</h4>
     <a href="{{ route('event.index') }}" style="display: block;">Show All Events</a>
@@ -42,9 +42,10 @@
     <a href="{{ url('/oneToOnePolymorphic') }}" style="display: block;">One To One Polymorphic</a>
     <a href="{{ url('/oneToManyPolymorphic') }}" style="display: block;">One To Many Polymorphic</a>
 
-    <h4 class="alert-info mt-5">Tasks</h4>
+    <h4 class="alert-info mt-5">Other Tasks</h4>
     <a href="{{ url('checkdays/1') }}" style="display: block;">Custom Middleware</a>
     <a href="{{ route('form_without_csrf') }}" style="display: block;">Form Submit Without CSRF Token</a>
+    <a href="{{ route('soft_delele') }}" style="display: block;"><b>Soft Delete: </b>Show all Player and WithTrashed Player</a>
 </div>
 @endsection
 

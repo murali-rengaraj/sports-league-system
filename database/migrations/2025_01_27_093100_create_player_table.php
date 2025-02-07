@@ -31,7 +31,8 @@ return new class extends Migration
 
         Schema::create('matches', function (Blueprint $table) {
             $table->id();
-            $table->integer('team_id');
+            // $table->unsignedBigInteger('home_team_id');
+            // $table->unsignedBigInteger('away_team_id');
             $table->dateTime('match_date');
             $table->string('location');
             $table->string('status'); //('scheduled', 'ongoing', 'completed')

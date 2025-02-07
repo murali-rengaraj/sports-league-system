@@ -78,6 +78,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('oneToManyPolymorphic', [RelationshipController::class, 'oneToManyPolymorphic']);
 });
 
+//Below for Soft Deletes
+Route::get('/soft-deletes',[ShowController::class,'showSoftDelete'])->name('soft_delele');
+
 //Custom middleware task
 Route::get('/checkdays/{day?}', function ($d) {
     return view('tasks.checkdays', compact('d'));
