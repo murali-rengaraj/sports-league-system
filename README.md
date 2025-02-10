@@ -1,6 +1,6 @@
-###php artisan migrate
+### php artisan migrate
 
-###php artisan db:seed 
+### php artisan db:seed 
 
 Project Name: SPORTS LEAGUE SYSTEM
 
